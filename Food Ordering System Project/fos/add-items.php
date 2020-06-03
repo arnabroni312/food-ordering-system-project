@@ -1,0 +1,12 @@
+<?php
+session_start();
+$foodId=$_POST["food_id"];
+$quantity=$_POST["item_quantity"];
+if(!isset($_SESSION['cart_details'])){
+	$_SESSION['cart_details']=array();
+}
+$cartDetails=$_SESSION['cart_details'];
+$_SESSION['cart_details'][$foodId]=$quantity;
+print_r($_SESSION['cart_details']);
+die("a");
+?>
